@@ -57,6 +57,9 @@ curl -fsSL https://raw.githubusercontent.com/lixu19870823/dsh-vision-router/main
 - 安全建议：`curl` 直通 `bash` 前可先下载审查：
   `curl -fsSL -o install.sh <url> && cat install.sh && bash install.sh`
 
+不想碰命令行也没关系：如果你正在使用 Agent（比如 DeepSeek Harness 的会话），
+直接把本仓库链接发给它，让它参照上面的步骤帮你完成安装即可。
+
 ### 手动安装（备选）
 
 假设 profile 根目录为 `~/.dsh/profiles/web`（按实际调整）。
