@@ -43,7 +43,21 @@ dsh-vision-router/
 └── package.json    # dsh.client 声明（client 模块标记 + 依赖注入边）
 ```
 
-## 安装（dsh profile 方式）
+## 安装（一条命令）
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/lixu19870823/dsh-vision-router/main/install.sh | bash
+```
+
+脚本会自动：把包复制进 profile → 建立解析链接 → 追加挂载行（幂等，可重复执行）。
+挂载行最后写入，profile 热监听立即生效，**无需重启 dsh 进程**，刷新浏览器页面即可。
+
+- 指定 profile：`bash install.sh <profile目录>` 或设置环境变量 `DSH_PROFILE`
+- 卸载：`bash install.sh --uninstall [profile目录]`
+- 安全建议：`curl` 直通 `bash` 前可先下载审查：
+  `curl -fsSL -o install.sh <url> && cat install.sh && bash install.sh`
+
+### 手动安装（备选）
 
 假设 profile 根目录为 `~/.dsh/profiles/web`（按实际调整）。
 
